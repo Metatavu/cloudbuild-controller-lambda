@@ -1,0 +1,11 @@
+{
+  "env": [
+    "DEBIAN_FRONTEND=noninteractive"
+  ],
+  "args": [
+    "-c",
+    "pip install -U platformio &&\npio run -e release -t upload"
+  ],
+  "name": "python:3.9.6",
+  "entrypoint": "bash"
+}

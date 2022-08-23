@@ -1,0 +1,13 @@
+{
+  "env": [
+    "AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}",
+    "AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}",
+    "AWS_DEFAULT_REGION=${_AWS_DEFAULT_REGION}"
+  ],
+  "args": [
+    "-c",
+    "./aws/install &&\naws eks update-kubeconfig --name ${_CLUSTER} --region=${_AWS_DEFAULT_REGION} &&\nkubectl -n ${_NAMESPACE} set image deployment/${_DEPLOYMENT} ${_DEPLOYMENT}=${_DOCKER_REPO_URL}:$(echo ${BUILD_ID} | cut -b 1-8)\n"
+  ],
+  "name": "gcr.io/cloud-builders/kubectl",
+  "entrypoint": "bash"
+}

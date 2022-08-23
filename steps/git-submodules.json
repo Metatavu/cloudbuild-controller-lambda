@@ -1,0 +1,9 @@
+{
+  "env": [],
+  "args": [
+    "-c",
+    "git submodule init\ngit submodule update\n"
+  ],
+  "name": "gcr.io/cloud-builders/git",
+  "entrypoint": "bash"
+}

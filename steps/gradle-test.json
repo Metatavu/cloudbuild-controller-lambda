@@ -1,0 +1,9 @@
+{
+  "env": [],
+  "args": [
+    "-c",
+    "./gradlew test"
+  ],
+  "name": "openjdk:11-jdk",
+  "entrypoint": "bash"
+}
